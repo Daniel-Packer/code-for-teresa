@@ -24,9 +24,15 @@ The sorts of generated datasets are as follows:
  - `kmeans_subsampled_n{}_s{}.npz`: The $k$-means subsampled dataset. The number following `n` is how many trials of $k$-means that were run (this is the second axis of the resulting `numpy` array). The number following `s` is how many clusters were used (this is the third axis of the resulting array).
 
 The `src` directory contains all `.py` files. I'll pare down the content I upload to github and describe the subdirectories below:
- - `gw`
+ - `gw`: This contains code for computing GW distances or their lower bounds
+   * `second`: the code for computing the Second Lower Bound in `jax`
+ - `pipeline`: the code for producing predictions using the kNN
+   * `pipeline`: focuses on producing predictions with the SLB
+   * `rescale`: code for rescaling the velocities and positions evenly
+ - `subsampling`: for the k-Means subsampling of the larger point clouds. Included here only to provide evidence for how the data were created.
+ - `summarize`: code for the kNN predictions specifically. Everything here is poorly named.
 
 The `notebooks` directory contains all notebooks. There is currently no organization within this directory.
 
 Output:
- - `plots`: Where generated plots and figures live.
+ - `plots`: Where generated plots and figures live. (not included)
